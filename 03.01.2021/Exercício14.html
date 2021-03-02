@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+
+    <input id="ze" placeholder='Quantidade de votos do Zé Buduia' autofocus><br><br>
+    <input id="maria" placeholder='Quantidade de votos da Maria Bigodenha' autofocus><br><br>
+    <input id="branco" placeholder='Quantidade de votos em branco' autofocus><br><br>
+    <input id="nulo" placeholder='Quantidade de votos nulos' autofocus><br><br>
+    <button onclick="resultado()">Resultados da Eleição</button><br><br>
+    <span id="calculo"></span>
+
+</body>
+</html>
+<script>
+    function resultado(){
+        var n1 = parseFloat(ze.value);
+        var n2 = parseFloat(maria.value);
+        var n3 = parseFloat(branco.value);
+        var n4 = parseFloat(nulo.value);
+        var n5 = n1 + n2 + n3 + n4;
+        calculo.innerHTML += `<b>Total de votos: ${n1 + n2 + n3 + n4}</b><br>
+            <b>Zé Buduia:</b> ${n1 / n5 * 100}% (${n1} votos)<br>
+            <b>Maria Bigodenha:</b> ${n2 / n5 * 100}% (${n2} votos)<br>
+            <b>Inválidos:</b> ${(n3 + n4) / n5 * 100}% (${n3 + n4} votos)`;
+    }
+
+</script>

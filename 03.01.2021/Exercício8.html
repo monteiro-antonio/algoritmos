@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+
+    <input id="salario" placeholder='Salário' autofocus><br><br>
+    <button onclick="desconto()">Calcular Descontos</button><br><br>
+    <span id="calculo"></span>
+
+</body>
+</html>
+<script>
+    function desconto(){
+        var n1 = salario.value;
+        calculo.innerHTML += `Seus descontos serão de:<br>
+        INSS: <b>R$${n1 * 0.1}</b><br>
+        IR: <b>R$${n1 * 0.2}</b><br>
+        Total de descontos: <b>R$${n1 * 0.3}</b><br>
+        Seu salário após os descontos será de: <b>R$${n1 * 0.7}</b>`;
+    }
+
+
+</script>

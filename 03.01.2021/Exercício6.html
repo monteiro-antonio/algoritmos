@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <input id="pizza" placeholder='Sabor da Pizza' autofocus><br><br>
+    <input id="valor" placeholder='Valor da Pizza' autofocus><br><br>
+    <input id="amigos" placeholder='Quantidade de Amigos' autofocus><br><br>
+    <button onclick="preco()">Ver valor por amigo</button><br><br>
+    <span id="calculo"></span>
+
+</body>
+</html>
+<script>
+    function preco(){
+        var n1 = valor.value;
+        var n2 = amigos.value;
+        var n3 = pizza.value;
+        calculo.innerHTML += `<br>Cada amigo vai colaborar com <u>R$${n1 / n2}</u> para a pizza de ${n3}`;
+    }
+
+
+</script>

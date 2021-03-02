@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <input id="x" placeholder='Nota 1' autofocus><br><br>
+    <input id="y" placeholder='Nota 2' autofocus><br><br>
+    <button onclick="media()">Calcular média</button><br><br>
+    <span id="calculo"></span>
+
+</body>
+</html>
+<script>
+    function media(){
+        var n1 = x.value;
+        var n2 = y.value;
+        calculo.innerHTML += `<br>A sua média foi de ${(parseInt(n1) + parseInt(n2))/2}`;
+    }
+
+
+</script>
