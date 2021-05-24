@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção da Continuada 1</title>
+</head>
+<body>
+    <!-- letra a) -->
+    <img src="https://www.scuadra.com.br/blog/wp-content/uploads/2019/05/gerenci-810x405.jpg?x57397" style="height: 200px;" alt="Logo da controle de estoque">
+
+    <!-- letra b) -->
+    <h3>Gestoque! Guarde bem o que está contigo!</h3>
+
+    <!-- letra c) - inicio -->
+    Nome do produto: <input id="in_nome"> <br>
+    Unidade: <input id="in_unidade"> <br>
+    Quantidade em estoque <input id="in_quantidade"> <br>
+    Valor de compra por Unidade <input id="in_valor_compra"> <br>
+    Valor de venda por Unidade <input id="in_valor_venda"> <br>
+    <!-- letra c) - fim -->
+
+    <!-- letra d) - botão -->
+    <br><button onclick="analisar()">Analisar estoque</button>
+    <br><br>
+
+    <!-- div para as letra d) a g) -->
+    <div id="div_resultado">
+    </div>
+    
+</body>
+</html>
+<script>
+    function analisar() {
+        var nome = in_nome.value;
+        var valor_compra = Number(in_valor_compra.value);
+        var valor_venda = Number(in_valor_venda.value);
+        var valor_estoque = Number(in_quantidade.value) * valor_venda;
+        var valor_lucro = valor_venda - valor_compra;
+        
+        var porcentagem_lucro = (valor_venda / valor_compra - 1) * 100;
+
+        // letras d)
+        div_resultado.innerHTML = `<h2>Resultado da análise</h2>`;
+    
+        // letra g) - primeiro item
+        div_resultado.innerHTML += `<img src="https://cdn.dicionariopopular.com/imagens/nazareconfusamatematica.gif"><br>`;
+
+        // letras d), e) e g) - inicio
+        div_resultado.innerHTML += `Você possui um total de <b style="color:navy">${in_quantidade.value}</b> <b style="color:blue">${in_unidade.value}</b> de <b style="color:gray">${nome}</b> em estoque. <br>`;
+        div_resultado.innerHTML += `Você tem um total de R$ <b style="color:green">${valor_estoque}</b> em estoque de <b style="color:gray">${nome}</b>. <br>`;
+        div_resultado.innerHTML += `Vai lucrar R$ <b style="color:darkgreen">${valor_lucro}</b> em cada <b style="color:gray">${nome}</b> vendido. <br>`;
+
+        div_resultado.innerHTML += `Como comprou cada unidade por <b style="color:darkgreen">${valor_compra}</b> e vai vender por <b style="color:purple">${valor_venda}</b>, sua margem de lucro será de <b style="color:maroon">${porcentagem_lucro}</b>%. <br> <br>`
+        // letras d), e) e g) - fim
+
+        // letra f) - inicio
+        var porcentagem_compra = (valor_compra / valor_venda) * 100;
+        var porcentagem_venda = 100 - porcentagem_compra;
+
+        div_resultado.innerHTML += `<div style="background-color: red; height: 30px; float: left; width: ${porcentagem_compra}%"></div>`;
+
+        div_resultado.innerHTML += `<div style="background-color: green; height: 30px; float: left; width: ${porcentagem_venda}%"></div>`;
+
+        div_resultado.innerHTML += '<b>Composição do preço</b>';
+        // letra f) - fim
+    }
+</script>

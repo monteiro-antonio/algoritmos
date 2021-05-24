@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h2>Que time você torce?</h2>
+    <select id="times">
+        <option value="">Selecione o seu time</option>
+        <option value="https://a.espncdn.com/i/teamlogos/soccer/500/874.png">Corinthians</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/1200px-Palmeiras_logo.svg.png">Palmeiras</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/c/c9/Santos-logo-escudo-2.png">Santos</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1027px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png">São Paulo</option>
+    </select>
+    <br><br>
+    <button onclick="mostrar_time()">Ver escudo</button>
+    <br><br>
+    <img id="escudo" style="height: 300px;">
+
+    <script>
+
+        function mostrar_time() {
+            escudo.src = times.value;
+        }
+
+    </script>
+</body>
+</html>

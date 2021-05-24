@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+
+<body>
+    <h2>Arroz</h2>
+    <br>
+    Qual o tipo de arroz utilizado? <select id="tipo_arroz">
+        <option value="" disabled selected>Tipo de arroz</option>
+        <option value="1">Integral</option>
+        <option value="2">Branco</option>
+    </select>
+    <br><br>
+    Qual o tempo de cozimento do arroz? <input id="tempo_cozimento" placeholder="Tempo de cozimento (minutos)"
+        autofocus>
+    <br><br>
+    Quanto de sal foi utilizado? <input id="qtde_sal" placeholder="Quantidade de sal (gramas)">
+    <br><br>
+    <button onclick="avaliar()">Avaliar arroz</button>
+    <br><br>
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function avaliar() {
+
+        var arroz = tipo_arroz.value
+        var tempo = tempo_cozimento.value
+        var sal = qtde_sal.value
+
+        if (arroz == 1 && tempo == 10 && sal >= 10 ) {
+            resultado.innerHTML = `Arroz integral perfeito <br>
+            <img src="https://img.itdg.com.br/tdg/images/recipes/000/114/954/44015/44015_original.jpg?mode=crop&width=710&height=400" alt="arroz integral perfeito">`
+        }
+
+        else if (arroz == 2 && tempo == 20 && sal >= 15) {
+            resultado.innerHTML = `Arroz branco perfeito <br>
+            <img src="https://thumbs.web.sapo.io/?W=800&H=0&delay_optim=1&epic=Njlm3/k66JIeKR973Tzu0QOqSQRFXsVSD6rimlow0hi3hD6dyj2bAeyJC5HE1ckRnAGsW0RTvNgSTbyFQ8B1MRHhV0X3u82h2vXzlT6U6qszyRA=" alt="arroz branco perfeito">`
+        }
+
+        else {
+            resultado.innerHTML = `Seu arroz não está perfeito <br>
+            <img src="https://noticiasdatv.uol.com.br/media/_versions/erick-jacquin-freezer-bronca-pesadelo-na-cozinha-reproducao-band-min_fixed_large.jpg" alt="ruim">`
+        }
+    }
+
+
+</script>

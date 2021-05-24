@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofrinho</title>
+</head>
+
+<body>
+    <h1>QUEM GUARDA TEM</h1><br>
+
+    <input id="valor" placeholder="Valor" autofocus>
+    <br><br>
+    <button onclick="retirar()">Retirar do Cofrinho</button>
+    <br><br>
+    <button onclick="depositar()">Depositar no Cofrinho</button>
+    <br><br>
+
+    O valor que está guardado no seu cofrinho é de R$
+    <b id="saldo">0</b>
+
+
+</body>
+
+<script>
+    
+    var saldo_cofre = 0
+
+    function retirar() {
+        saldo_cofre -= valor.value;
+        saldo.innerHTML = saldo_cofre
+    }
+
+    function depositar() {
+        saldo_cofre += parseInt(valor.value);
+        saldo.innerHTML = saldo_cofre
+    }
+
+</script>
+
+</html>

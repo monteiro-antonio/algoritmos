@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+
+<body>
+    <h2>Resultado do semestre</h2>
+    <br>
+    Anos de trabalho para o pai da pretendente: <input id="anos_trab" placeholder="Anos de trabalho" autofocus>
+    <br><br>
+    Rendimento em quilos das plantações: <input id="rendimento_kg" placeholder="Rendimento das plantações">
+    <br><br>
+    Quantidade de faltas no trabalho por estar doente: <input id="faltas_trab" placeholder="Dias faltados">
+    <br><br>
+    <button onclick="verificar()">Deu match?</button>
+    <div>
+        <img id="noiva" src="https://alexsantanapcm.com.br/wp-content/uploads/2018/01/dia-da-noiva.jpg" alt="noiva"
+            style="display: none; height: 300px;">
+        <img id="pai_bravo" src="https://static.vix.com/pt/sites/default/files/h/homem-bravo-0119-1400x800.jpg"
+            alt="pai bravo" style="display: none; height: 300px;">
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function verificar() {
+        var anos = anos_trab.value
+        var rendimento = rendimento_kg.value
+        var faltas = faltas_trab.value
+
+        if (anos >= 5 && rendimento >= 300 && faltas <= 5){ 
+            alert("Minha filha será sua")
+        noiva.style.display = 'inline'
+        } 
+        else {
+            alert("Deu ruim! Trabalhe mais 2 anos")
+            pai_bravo.style.display = 'inline'
+        }
+    }
+
+
+</script>

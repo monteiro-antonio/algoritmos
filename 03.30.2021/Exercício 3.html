@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    <h2>Ajuda do governo</h2>
+    <br>
+    Qual a sua renda mensal? <input id="mensal" placeholder="Insira a renda mensal" autofocus>
+    <br><br>
+    Qual a renda familiar total? <input id="familiar" placeholder="Insira a renda familiar">
+    <br><br>
+    <button onclick="analise()">Terei o benefício?</button>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function analise() {
+        var renda_mensal = mensal.value
+        var renda_familiar = familiar.value
+
+        if (renda_mensal <= 2000 || renda_familiar <= 3000) {
+            alert("Você terá direito ao auxílio")
+        }
+
+        else {
+            alert("Sem direito ao auxílio")
+        }
+    }
+
+
+</script>

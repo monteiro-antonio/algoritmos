@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saga do Infinito</title>
+</head>
+
+<body>
+    <button id="bt_sumir" onclick="sumir()" style="display: block;">Deveria ter acertado a cabeça</button>
+    <button id="bt_aparecer" onclick="aparecer()" style="display: none;">Traga todos de volta</button>
+    <br>
+    <img id="cap_america" style="height: 200px; display: inline;"
+        src="https://static.wikia.nocookie.net/liberproeliis/images/a/a5/Captain-america-aou.png/revision/latest?cb=20180726170452&path-prefix=pt-br">
+    <img id="homem_aranha" style="height: 200px; display: inline;"
+        src="https://i.pinimg.com/originals/c9/2d/67/c92d67e77a7240df22b11e4a33fb02b2.png">
+    <img id="homem_ferro" style="height: 200px; display: inline;"
+        src="https://static.wikia.nocookie.net/liberproeliis/images/c/c4/Iron_man_avengers_infinity_war_png_by_gasa979-dc5nh19.png/revision/latest/scale-to-width-down/340?cb=20181104024619&path-prefix=pt-br">
+    <img id="pantera_negra" style="height: 200px; display: inline;"
+        src="https://2.bp.blogspot.com/-WzI0pBKsa9E/VvgpquMpTLI/AAAAAAAANuA/y6wTV582MuISattcj3D5hdC2FdXuzQuyw/s1600/04.png">
+    <img id="thor" style="height: 200px; display: inline;"
+        src="https://static.wikia.nocookie.net/liberproeliis/images/5/5b/Infinity_war_thor3.png/revision/latest/scale-to-width-down/340?cb=20181115230433&path-prefix=pt-br">
+    <img id="dr_estranho" style="height: 200px; display: inline;"
+        src="https://static.wikia.nocookie.net/disney/images/8/8c/Doutor_Estranho.png/revision/latest?cb=20190201232321&path-prefix=pt-br">
+    
+</body>
+<script>
+    function sumir() {
+        homem_aranha.style.display='none'
+        pantera_negra.style.display='none'
+        dr_estranho.style.display='none'
+        
+        bt_sumir.style.display='none'
+
+        bt_aparecer.style.display='block'
+    }
+
+    function aparecer() {
+        homem_aranha.style.display='inline'
+        pantera_negra.style.display='inline'
+        dr_estranho.style.display='inline'
+        
+        bt_sumir.style.display='inline'
+
+        bt_aparecer.style.display='none'
+    }
+</script>
+</html>

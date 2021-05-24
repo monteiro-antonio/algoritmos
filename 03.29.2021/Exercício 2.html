@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <h2>Resultado do semestre</h2>
+    <br>
+    Nota da primeira prova <input id="prova1" placeholder="Insira a nota da primeira prova" autofocus>
+    <br><br>
+    Nota da segunda prova <input id="prova2" placeholder="Insira a nota da segunda prova">
+    <br><br>
+    Frequência <input id="frequencia" placeholder="Insira a sua frequência">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function verificar() {
+        var prim_nota = prova1.value
+        var seg_nota = prova2.value
+        var media = (Number(prim_nota) + Number(seg_nota)) / 2
+        var freq = frequencia.value
+
+        if (prim_nota >= 5 && seg_nota >= 5 && media >= 6 && freq >= 75)
+            alert("ALUNO APROVADO")
+
+        else {
+            alert("ALUNO REPROVADO")
+        }
+    }
+
+
+</script>

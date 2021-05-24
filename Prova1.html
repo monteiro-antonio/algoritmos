@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestoque</title>
+</head>
+<body>
+    <img style="height: 300px;" 
+    src="https://www.scuadra.com.br/blog/wp-content/uploads/2019/05/gerenci-810x405.jpg?x57397"
+    alt="Imagem retratando um estoque"><br>
+    
+    <h1>Gestoque! Guarde bem o que está contigo!</h1><br>
+
+    <input id="nome" placeholder="Nome do Produto" autofocus><br><br>
+
+    <input id="unidade" placeholder="Tipo de unidade (unidade, litro, quilo)" autofocus><br><br>
+
+    <input id="qtde" placeholder="Quantidade em estoque" autofocus><br><br>
+
+    <input id="compra" placeholder="Valor de Compra por Unidade" autofocus><br><br>
+
+    <input id="venda" placeholder="Valor de Venda por Unidade" autofocus><br><br>
+
+    <button onclick="analise()">Analisar Estoque</button><br><br>
+
+    <span id="estoque"></span>
+
+</body>
+</html>
+<script>
+    function analise(){
+        var n1 = nome.value
+        var n2 = unidade.value
+        var n3 = qtde.value
+        var n4 = compra.value
+        var n5 = venda.value
+        var n6 = parseFloat(n4) + parseFloat(n5) <!-- soma dos valores de compra e venda, para facilitar o cálculo)-->
+
+        estoque.innerHTML = `<img style="height: 300px;" 
+    src="https://www.cetecc.org.br/wp-content/uploads/2018/04/58521.jpg"
+    alt="Imagem retratando um cálculo"><br> 
+        Você possui um total de <b style="color: blue;">${n3}</b> <b style="color: red;">${n2}</b> de <b style="color: green;">${n1}</b> em estoque. <br>
+        Você tem um total de R$ <b style="color: darkturquoise;">${n5 * n3}</b> em estoque de <b style="color: green;">${n1}</b> <br>
+        Vai lucrar R$ <b style="color: orange;">${n5 - n4}</b> em cada <b style="color: green;">${n1}</b> vendido.<br><br>
+        Como comprou cada unidade por <b style="color: purple;">${n4}</b> e vai vender por <b style="color: gray;">${n5}</b>, sua margem de lucro será de <b style="color: crimson;">${(n5 / n4 -1) *100}</b>%.<br>
+        <div style="background-color: red; width: ${n4 / n6 * 100}%; height: 10px; display: inline-block;"></div>
+        <div style="background-color: green; width: ${(n5 - n4) / n6 * 100}%; height: 10px; display: inline-block"></div><br>
+        Composição do Preço
+        `;
+    }
+    
+</script>

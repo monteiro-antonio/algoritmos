@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <h2>Resultado do semestre</h2>
+    <br>
+    Qual a sua média na matéria?<input id="media" placeholder="Insira a sua média" autofocus>
+    <br><br>
+    <button onclick="avaliar()">Avaliar</button>
+    <br><br>
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function avaliar() {
+        var result = media.value
+
+        if (result >= 6) {
+            resultado.innerHTML = `Parabéns, você passou!`
+        }
+
+        if (result > 10) {
+            resultado.innerHTML = `Média inválida!`
+        }
+
+        else {
+            resultado.innerHTML = `Infelizmente, você não passou`
+        }
+
+    }
+
+
+</script>

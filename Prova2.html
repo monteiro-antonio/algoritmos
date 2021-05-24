@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triatlo</title>
+</head>
+
+<body>
+    <input type="text" id="nome" autofocus placeholder="Insira o nome">
+    <br><br>
+    <input type="text" id="idade" placeholder="Insira a idade">
+    <br><br>
+    <select id="esporte">
+        <option value="">Selecione um esporte</option>
+        <option value="correr">Correr</option>
+        <option value="nadar">Nadar</option>
+        <option value="pedalar">Pedalar</option>
+    </select>
+    <br><br>
+    <button onclick="avaliar()">Praticar esporte</button>
+    <br><br>
+
+    <div id="placar"></div>
+</body>
+
+</html>
+<script>
+
+    var km_corrida = 0
+    var km_nado = 0
+    var km_pedalada = 0
+    var km_total = 0
+    var porcentagem_corrida = 0
+    var porcentagem_nado = 0
+    var porcentagem_pedalada = 0
+
+    function avaliar() {
+
+        var nome_atleta = nome.value
+        var idade_atleta = Number(idade.value)
+        var esporte_selecionado = esporte.value
+
+        if (nome_atleta.length < 3 || idade_atleta < 18 || idade_atleta > 80) {
+            alert("Dados inválidos!")
+        }
+
+        else if (esporte_selecionado == "correr") {
+            km_corrida += 1.5
+            km_total = km_corrida + km_nado + km_pedalada
+            var porcentagem_corrida = km_corrida / km_total * 100
+            var porcentagem_nado = km_nado / km_total * 100
+            var porcentagem_pedalada = km_pedalada / km_total * 100
+            placar.innerHTML = `Atleta: <b>${nome_atleta}</b> - Idade: <b>${idade_atleta}</b> anos <br><br>
+        Km correndo: <b>${km_corrida.toFixed(1)}</b> (<b>${porcentagem_corrida.toFixed(2)}</b>%)
+        <br>
+        Km nadando: <b>${km_nado.toFixed(1)}</b> (<b>${porcentagem_nado.toFixed(2)}</b>%)
+        <br>
+        Km pedalando: <b>${km_pedalada.toFixed(1)}</b> (<b>${porcentagem_pedalada.toFixed(2)}</b>%)
+        <br><br>
+        Km total: <b>${km_total.toFixed(1)}</b>
+        <br><br>
+        <img style="width: ${porcentagem_corrida * 3}px;" src="https://image.flaticon.com/icons/png/128/103/103956.png">
+        <img style="width: ${porcentagem_nado * 3}px;"  src="https://image.flaticon.com/icons/png/128/124/124212.png">
+        <img style="width: ${porcentagem_pedalada * 3}px;"  src="https://image0.flaticon.com/icons/png/128/94/94203.png">`
+        }
+
+        else if (esporte_selecionado == "nadar") {
+            km_nado += 1.5
+            km_total = km_corrida + km_nado + km_pedalada
+            var porcentagem_corrida = km_corrida / km_total * 100
+            var porcentagem_nado = km_nado / km_total * 100
+            var porcentagem_pedalada = km_pedalada / km_total * 100
+            placar.innerHTML = `Atleta: <b>${nome_atleta}</b> - Idade: <b>${idade_atleta}</b> anos <br><br>
+        Km correndo: <b>${km_corrida.toFixed(1)}</b> (<b>${porcentagem_corrida.toFixed(2)}</b>%)
+        <br>
+        Km nadando: <b>${km_nado.toFixed(1)}</b> (<b>${porcentagem_nado.toFixed(2)}</b>%)
+        <br>
+        Km pedalando: <b>${km_pedalada.toFixed(1)}</b> (<b>${porcentagem_pedalada.toFixed(2)}</b>%)
+        <br><br>
+        Km total: <b>${km_total.toFixed(1)}</b>
+        <br><br>
+        <img style="width: ${porcentagem_corrida * 3}px;" src="https://image.flaticon.com/icons/png/128/103/103956.png">
+        <img style="width: ${porcentagem_nado * 3}px;"  src="https://image.flaticon.com/icons/png/128/124/124212.png">
+        <img style="width: ${porcentagem_pedalada * 3}px;"  src="https://image0.flaticon.com/icons/png/128/94/94203.png">`
+        }
+
+        else if (esporte_selecionado == "pedalar") {
+            km_pedalada += 1.5
+            km_total = km_corrida + km_nado + km_pedalada
+            var porcentagem_corrida = km_corrida / km_total * 100
+            var porcentagem_nado = km_nado / km_total * 100
+            var porcentagem_pedalada = km_pedalada / km_total * 100
+            placar.innerHTML = `Atleta: <b>${nome_atleta}</b> - Idade: <b>${idade_atleta}</b> anos <br><br>
+        Km correndo: <b>${km_corrida.toFixed(1)}</b> (<b>${porcentagem_corrida.toFixed(2)}</b>%)
+        <br>
+        Km nadando: <b>${km_nado.toFixed(1)}</b> (<b>${porcentagem_nado.toFixed(2)}</b>%)
+        <br>
+        Km pedalando: <b>${km_pedalada.toFixed(1)}</b> (<b>${porcentagem_pedalada.toFixed(2)}</b>%)
+        <br><br>
+        Km total: <b>${km_total.toFixed(1)}</b>
+        <br><br>
+        <img style="width: ${porcentagem_corrida * 3}px;" src="https://image.flaticon.com/icons/png/128/103/103956.png">
+        <img style="width: ${porcentagem_nado * 3}px;"  src="https://image.flaticon.com/icons/png/128/124/124212.png">
+        <img style="width: ${porcentagem_pedalada * 3}px;"  src="https://image0.flaticon.com/icons/png/128/94/94203.png">`
+        }
+    }
+
+</script>

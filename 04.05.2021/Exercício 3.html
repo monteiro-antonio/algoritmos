@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <h2>Validação Nome</h2>
+    <input type="text" id="email" onkeyup="analisar()" placeholder="Insira seu Email">
+    <br><br>
+    <div id="validacao"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var teste_email = email.value.trim();
+
+        if (teste_email.length < 11) {
+            validacao.innerHTML = `Nome deve ter pelo menos 10 Letras`;
+        } else {
+            validacao.innerHTML = `Nome OK`;
+        }
+    }
+</script>

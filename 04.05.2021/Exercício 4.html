@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+
+<body>
+    <h2>Validação email</h2>
+    <input type="text" id="email" onkeyup="analisar()" placeholder="Insira seu Email">
+    <br><br>
+    <div id="div_validar"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var teste_email = email.value
+        var validacao1 = teste_email.indexOf('@')
+        var validacao2 = teste_email.indexOf('.')
+        var validacao3 = teste_email.length
+
+        if (validacao3 >= 7 && validacao1 >= 0 && validacao2 >= 0) {
+            div_validar.innerHTML = `Email Válido`;
+        } 
+        
+        else {
+            div_validar.innerHTML = `Email Inválido`;
+        }
+    }
+
+</script>

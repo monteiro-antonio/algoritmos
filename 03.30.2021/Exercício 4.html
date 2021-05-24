@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+
+<body>
+
+    Pagamento parcelado ou a vista
+    <br><br>
+
+    <select id="forma_pagto">
+        <option value="" disabled selected>Selecione a forma de pagamento</option>
+        <option value="1">Dinheiro</option>
+        <option value="2">Cartão de débito</option>
+        <option value="3">Cartão de crédito</option>
+        <option value="4">Boleto</option>
+    </select>
+    <br><br>
+
+    <button onclick="analise()">Analisar compra</button>
+
+</body>
+
+</html>
+
+<script>
+
+    function analise() {
+        var pagamento = forma_pagto.value
+
+        if (pagamento == 1 || pagamento == 2) {
+            alert("Você terá que pagar a vista")
+        }
+        else {
+            alert("Pagamento poderá ser parcelado")
+        }
+    }
+
+
+</script>

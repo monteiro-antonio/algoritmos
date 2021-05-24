@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <h2>Pizza</h2>
+    <br><br>
+    Digite a nota da primeira prova: <input id="nota1" placeholder="Nota 1" autofocus>
+    <br><br>
+    Digite a nota da segunda prova: <input id="nota2" placeholder="Nota 2">
+    <br><br>
+    Digite a nota da terceira prova: <input id="nota3" placeholder="Nota 3">
+    <br><br>
+    <button onclick="calcular()">Analisar desempenho</button>
+    <br><br>
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        var primeira_nota = Number(nota1.value)
+        var segunda_nota = Number(nota2.value)
+        var terceira_nota = Number(nota3.value)
+        var soma = primeira_nota + segunda_nota + terceira_nota
+        var media = soma / 3
+
+        resultado.innerHTML = `Sua média foi de ${media}`
+
+        if (media > 9.4) {
+            resultado.innerHTML += `<br><b>Parabéns, você é fora de série!<b>`
+        }
+
+    }
+
+
+
+
+
+</script>

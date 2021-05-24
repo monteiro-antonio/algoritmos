@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+
+<body>
+
+    O que você come em cada uma das refeições?
+    <br><br>
+
+    <select id="cafe_da_manha">
+        <option value="" disabled selected>Café da manhã</option>
+        <option value="1">Ovos</option>
+        <option value="2">Leite de Arroz</option>
+        <option value="3">Bacon</option>
+    </select>
+    <br><br>
+
+    <select id="almoco">
+        <option value="" disabled selected>Almoço</option>
+        <option value="1">Bife</option>
+        <option value="2">Hamburguer de Soja</option>
+        <option value="3">Frango Grelhado</option>
+    </select>
+    <br><br>
+
+    <select id="janta">
+        <option value="" disabled selected>Janta</option>
+        <option value="1">Picanha de Soja</option>
+        <option value="2">Cupim</option>
+        <option value="3">Coração</option>
+    </select>
+    <br><br>
+
+    <button onclick="teste()">Sou vegano</button>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function teste() {
+        var primeira_refeicao = cafe_da_manha.value
+        var segunda_refeicao = almoco.value
+        var terceira_refeicao = janta.value
+
+
+        if (primeira_refeicao == 2 && segunda_refeicao == 2 && terceira_refeicao == 1)
+            alert("Sim, você é vegano")
+
+        else {
+            alert("Não, você não é vegano")
+        }
+    }
+
+
+</script>

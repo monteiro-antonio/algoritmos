@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+
+<body>
+    <h2>Peso médio do elevador</h2>
+    <br><br>
+    Quantos homens entram no elevador? <input id="homens" placeholder="Qtde de homens" autofocus>
+    <br><br>
+    Quantas mulheres entram no elevador? <input id="mulheres" placeholder="Qtde de mulheres">
+    <br><br>
+    <button onclick="calcular()">Analisar peso</button>
+    <br><br>
+    <div id="resultado"></div>
+    <span id="excesso" style="color: blue; font-weight: bold;"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        var peso_homens = homens.value * 80
+        var peso_mulheres = mulheres.value * 60
+        var peso_total = peso_homens + peso_mulheres
+
+            resultado.innerHTML = `Este elevador suporta 800Kg e o peso estimado desta lotação é de ${peso_total}`
+
+        if (peso_total > 800) {
+            excesso.innerHTML = `<br>Será necessário descer alguém para que o elevador se movimente`
+        }
+
+    }
+
+
+
+
+
+</script>

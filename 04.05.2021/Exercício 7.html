@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+
+<body>
+    <h2>Separador de letras</h2>
+    <input id="texto" onkeyup="organizar()" ondblclick="apagar()" placeholder="Digite sua frase">
+    <br><br>
+    <div id="validacao"></div>
+</body>
+
+</html>
+<script>
+    function organizar() {
+
+        var frase = texto.value
+
+        validacao.innerHTML += `${frase[frase.length-1]} <br>`
+    }
+
+    function apagar() {
+        validacao.innerHTML = ``
+    }
+
+</script>

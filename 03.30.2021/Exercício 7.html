@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+
+<body>
+    <h2>Tinder</h2>
+    <br>
+    Qual a cor do cabelo da moça? <select id="cor_cabelo">
+        <option value="" disabled selected>Cores de cabelo</option>
+        <option value="1">Preto</option>
+        <option value="2">Vermelho</option>
+        <option value="3">Amarelo</option>
+        <option value="4">Castanho</option>
+    </select>
+    <br><br>
+    Qual a altura da moça? <input id="altura" placeholder="Insira a altura (cm)" autofocus>
+    <br><br>
+    <button onclick="analise()">Deu match?</button>
+    <br><br>
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analise() {
+
+        var cor = cor_cabelo.value
+        var height = altura.value
+
+        if ((cor == 1 || cor == 2) && height >= 170) {
+            resultado.innerHTML = `<img src="https://image.freepik.com/fotos-gratis/homem-feliz-no-sofa_23-2148560438.jpg" alt="Feliz">`
+        }
+
+        else {
+            resultado.innerHTML = `<img src="https://image.freepik.com/fotos-gratis/homem-triste-segurando-a-cabeca-com-a-mao_1150-6345.jpg" alt="Triste">`
+        }
+    }
+
+
+</script>
