@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03-Desafio</title>
+</head>
+<body>
+    <input type="number" id="ipt_menor" placeholder="Insira um valor Menor"> <br>
+    <input type="number" id="ipt_maior" placeholder="Insira um valor Maior"> <br>
+    <input type="number" id="ipt_cresc" placeholder="Insira um valor Crescimento"> <br>
+
+    <button onclick="bt_conta()">Contagem Loka</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    function bt_conta(){
+        var menor = Number(ipt_menor.value); //5
+        var maior = Number(ipt_maior.value); //90
+        var cresc = Number(ipt_cresc.value); //5
+
+        for(var numero = maior ; numero >= menor ; numero -= cresc){
+            mensagem.innerHTML += `${numero} <br>`
+        }
+    }
+</script>

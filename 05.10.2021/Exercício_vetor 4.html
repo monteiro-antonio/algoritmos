@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 - Vetor</title>
+</head>
+
+<body>
+    <input type="text" id="filmes" placeholder="Insira um filme">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+
+    <div id="lista"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_filmes = []
+
+    function cadastrar() {
+
+        var cadastro = filmes.value
+
+        lista.innerHTML = ''
+
+        if (cadastro == "") {
+            alert("Digite o nome de um filme")
+        }
+
+        lista_filmes.push(filmes.value)
+
+        for (contador = lista_filmes.length -1; contador >= 0; contador--) {
+            lista.innerHTML += `${lista_filmes[contador]}<br>`
+        }
+
+    }
+
+
+
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex08 - Notas Alunos</title>
+</head>
+<body>
+    <h3>Cadastrar Notas</h3>
+    <input type="text" id="ipt_notas" placeholder="Cadastrar Notas">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <br>
+    <input type="number" id="ipt_min" placeholder="Intervalo Minimo">
+    <input type="number" id="ipt_max" placeholder="Intervalo Maximo">
+    <button onclick="rever()">Rever Notas</button>
+    <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    notas = [];
+    function cadastrar() {
+        notas.push(`${ipt_notas.value}`);
+
+        ipt_notas.value = " ";
+
+    }
+    function rever() {
+        var nota1 = ipt_min.value;
+        var nota2 = ipt_max.value;
+        var tamanho = notas.length;
+
+        for (var index = 0; index < tamanho; index++) {
+            if (notas [index] >= nota1 && notas [index] <= nota2) {
+                msg.innerHTML += `${notas[index]}`
+            }
+            
+        }
+    }
+</script>

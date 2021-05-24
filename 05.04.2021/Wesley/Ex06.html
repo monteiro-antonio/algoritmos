@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amor</title>
+</head>
+<body>
+    <input placeholder="Nome do amor" id="ipt_amor">
+    <input placeholder="Quantidade x" id="ipt_qnt">
+    <button onclick="amor()">Expressar amor</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function amor() {
+        var amor = ipt_amor.value
+        var qnt = Number(ipt_qnt.value)
+
+        for(contador = 1; contador <= qnt; contador++){
+            msg.innerHTML += `${amor} eu te amo <br>`
+        }
+
+        
+    }
+</script>

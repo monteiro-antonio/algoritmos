@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07</title>
+</head>
+
+<body>
+    <input placeholder="Quantidade de numeros" id="ipt_qtd">
+    <button onclick="sorteio()">Sortear Numeros</button>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function sorteio() {
+        var qnt = Number(ipt_qtd.value);
+
+        for (var contador = 1; contador <= qnt; contador++) {
+            var aleatorio = Number(Math.random() * 100 + 1);
+            msg.innerHTML += `${parseInt(aleatorio)}<br>`;
+            if (aleatorio > 99) {
+            alert("olha o 100 ai")
+        }
+        }
+
+    }
+</script>

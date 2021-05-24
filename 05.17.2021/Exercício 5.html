@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5 - Vetor</title>
+</head>
+
+<body>
+    <input type="text" id="aluno" placeholder="Insira o nome do aluno">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="verificar()">Pesquisar alunos</button>
+    <br><br>
+    <div id="lista"></div>
+</body>
+
+</html>
+
+<script>
+    var alunos = []
+
+    var i = 0
+
+    var contagem = 0
+
+    function cadastrar() {
+
+        var input_aluno = aluno.value
+
+
+        if (input_aluno == "") {
+            alert("Digite o nome do aluno")
+        }
+
+        else {
+            alunos.push(aluno.value)
+            aluno.value = ""
+            lista.innerHTML += `${alunos[i]} <br>`
+            i++
+        }
+    }
+
+    function verificar() {
+
+        var nome = aluno.value
+
+        for (let n = 0; n < alunos.length; n++) {
+            if (nome == alunos[n]) {
+                contagem++
+            }
+
+        }
+        alert(`O aluno aparece ${contagem} vezes na lista`)
+        contagem = 0
+    }
+
+</script>

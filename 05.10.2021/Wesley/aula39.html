@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 39 - Pré e Pós incremento</title>
+</head>
+<body>
+    <button onclick="analisar()"> Pré e Pós</button>
+    <div id="msg"></div> <br> <br>
+    <div id="pos"></div>
+</body>
+</html>
+
+<script>
+    var ax_pre = 0;
+    var ax_pos = 0;
+    var ax_rodada = 1;
+    function analisar() {
+        // o pos incremento é caracterizado assim: ax_pos++
+        // o pré incremento é cracterizado assim: ++ax_pre
+        // ou seja, nós temos o ++ depois ou antes da variável
+        // 
+        // no pós incremento eu uso a variavel antes e depois é somado um nela
+        // 
+        // no pré incremento eu somo um na variável para depois usar 
+        // o seu conteúdo.
+        msg.innerHTML = `Estamos na ${ax_rodada}a. Rodada: <br>
+        e usado o pós incremento fica assim ${ax_pos++}
+        e usando o pré incremento fica assim ${++ax_pre}`;
+        ax_rodada++;
+    }
+</script>

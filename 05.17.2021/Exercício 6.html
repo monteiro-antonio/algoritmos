@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6 - Vetor</title>
+</head>
+
+<body>
+    <input type="number" id="numero" placeholder="Insira um número">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="verificar()">Ver histórico</button>
+    <br><br>
+    <div id="lista"></div>
+    <div id="calculos"></div>
+</body>
+
+</html>
+
+<script>
+    var numeros = []
+
+    function cadastrar() {
+
+        var n = numero.value
+
+
+        if (n == "") {
+            alert("Digite um número")
+        }
+
+        else {
+            numeros.push(numero.value)
+            numero.value = ""
+        }
+    }
+
+    function verificar() {
+
+        var maior = numeros[0]
+        var menor = numeros[0]
+        var soma = 0
+        var media = 0
+
+        lista.innerHTML = ""
+
+        for (let i = 0; i < numeros.length; i++) {
+
+            soma += Number(numeros[i])
+
+            media = soma / numeros.length
+
+            lista.innerHTML += `${i + 1}° Número: ${numeros[i]} <br>`
+            if (numeros[i] > maior) {
+                maior = numeros[i]
+            }
+
+
+            if (numeros[i] < menor) {
+                menor = numeros[i]
+            }
+        }
+
+        calculos.innerHTML = `<br>
+        Maior: ${maior} <br>
+        Menor: ${menor} <br>
+        Média: ${media} <br>
+        Total: ${soma} <br>
+        `
+    }
+
+</script>

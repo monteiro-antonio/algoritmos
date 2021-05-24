@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 - Vetor</title>
+</head>
+
+<body>
+    <input type="text" id="input_cadastro" placeholder="Filmes favoritos">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <button onclick="mostrar_painel()">Exibir painel</button>
+    <br><br>
+    <div id="painel"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var filmes = []
+
+    function cadastrar() {
+
+        var favorito = input_cadastro.value
+
+        if (favorito == "") {
+            alert("Insira um filme")
+        }
+
+        else {
+
+            filmes.push(input_cadastro.value)
+            input_cadastro.value = ""
+        }
+    }
+
+    function mostrar_painel() {
+        var filmes_favoritos = filmes[0]
+        var terceiro_filme = filmes.length >= 3 ? filmes[2] : `Ainda não existe`
+
+        painel.innerHTML = `
+        Seu filme favorito: ${filmes_favoritos}
+        <br>
+        Seu 3° filme favorito: ${terceiro_filme}
+        <br>
+        Total de filmes cadastrados: ${filmes.length}
+        `
+    }
+
+</script>

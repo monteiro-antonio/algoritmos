@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06 - Historico</title>
+</head>
+<body>
+    <h3>Cadastre um Numero</h3>
+    <input placeholder="Informe um numero" id="in_cadastrar">
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="historico()">Ver histórico</button>
+    <br>
+    <div id="div_numeros"></div>
+</body>
+</html>
+<script>
+    var numeros = [];
+
+    function cadastrar() {
+        numeros.push(Number(in_cadastrar.value));
+    }
+
+    function historico() {
+        div_numeros.innerHTML = '';
+
+        var menor;
+        var maior;
+        var soma = 0; // começando do 0 por que pode ocorrer do for nao ser executado (vetor vazio)
+        var media = 0; // começando do 0 por que pode ocorrer do for nao ser executado (vetor vazio)
+
+        for(var posicao = 0; posicao < numeros.length; posicao++){
+            var posicao_para_tela = posicao+1;
+            div_numeros.innerHTML += `${posicao_para_tela}o Numero : ${numeros[posicao]} <br>`;
+
+            if (posicao == 0){ // se for a 1a iteracao, com certeza o menor e o maior sao o numero atual
+                menor = numeros[0];
+                maior = numeros[0];
+            } else { // nas demais iteracoes, verificamos se trocar o maior ou o menor
+
+                // o numero atual é menor que o menor que temos registrado?
+                if (numeros[posicao] < menor){
+                    menor = numeros[posicao]; // sim, eu troco o menor pelo numero atual
+                }
+
+                // o numero atual é maior que o maior que temos registrado?
+                if (numeros[posicao] > maior) {
+                    maior = numeros[posicao]; // sim, eu troco o maior pelo número atual
+                }
+            }
+            soma += numeros[posicao];
+        }
+        media = soma / numeros.length;
+
+        div_numeros.innerHTML += `<br><br>
+        maior: ${maior} <br> 
+        menor: ${menor} <br>
+        media: ${media} <br>
+        Total: ${soma}`;
+    }
+</script>

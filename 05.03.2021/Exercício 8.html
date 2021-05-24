@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+
+<body>
+    <select id="multiplicador" onchange="calcular()">
+        <option value="" disabled selected>Selecione uma tabuada</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <br><br>
+    <div id="text"></div>
+</body>
+
+<script>
+
+
+    function calcular() {
+
+        var numero = multiplicador.value
+
+        text.innerHTML = `
+        ${numero} x 1 = ${numero * 1}<br>
+        ${numero} x 2 = ${numero * 2}<br>
+        ${numero} x 3 = ${numero * 3}<br>
+        ${numero} x 4 = ${numero * 4}<br>
+        ${numero} x 5 = ${numero * 5}<br>
+        ${numero} x 6 = ${numero * 6}<br>
+        ${numero} x 7 = ${numero * 7}<br>
+        ${numero} x 8 = ${numero * 8}<br>
+        ${numero} x 9 = ${numero * 9}<br>
+        `
+
+        if (numero % 2 == 0) {
+            text.style.color = "red"
+        }
+
+        else {
+            text.style.color = "blue"
+        }
+
+    }
+
+</script>
+
+</html>

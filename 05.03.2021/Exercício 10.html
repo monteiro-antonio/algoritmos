@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+
+<body>
+    <input type="number" id="dias" placeholder="Frequência da musculação">
+    <br><br>
+    <button onclick="calcular()">Exibir rotina mensal</button>
+    <br><br>
+    <div id="text"></div>
+
+</body>
+
+<script>
+
+
+    function calcular() {
+
+        var dia = dias.value
+        var contador = 0;
+
+        text.innerHTML = ''
+
+        while (contador < 30) {
+            contador++;
+
+            if ((contador - 1) % dia == 0) {
+                text.innerHTML += `Dia ${contador} - <b>Musculação</b><br>`;
+            }
+
+            else {
+                text.innerHTML += `Dia ${contador} - Comer, dormir, etc<br>`;
+            }
+        }
+    }
+</script>
+
+</html>

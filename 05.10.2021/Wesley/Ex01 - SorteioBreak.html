@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01 - SorteioBreak</title>
+</head>
+
+<body>
+    <h3>Sorteio Da sorte Sortuda</h3>
+    <input type="text" id="ipt_sorteio" placeholder="Numeros de 0 e 100">
+    <button onclick="sorte()">Testar minha Sorte</button>
+    <div id="msg"></div>
+</body>
+
+</html>
+
+<script>
+    function sorte() {
+        msg.innerHTML = ``
+        var contador = 0;
+        var nums = 0;
+        var sorte = Number(ipt_sorteio.value)
+        for (var contador = 0; contador < 30; contador++) {
+            var nums = (Math.random() * 100).toFixed(0);
+            msg.innerHTML += `${nums} <br>`;
+            if (contador == 29) {
+                msg.innerHTML += `É você não tem muita sorte me sorteios, pelo visto`
+            }
+            if (sorte == nums) {
+                msg.innerHTML += `MUITO BEM, você é uma pessoa de sorte!<br>
+                    seu numero saiu no ${contador}a vez.`
+                break;
+            }
+
+        }
+    }
+</script>

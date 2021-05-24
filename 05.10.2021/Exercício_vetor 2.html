@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 - Vetor</title>
+</head>
+
+<body>
+    <input type="text" id="local" placeholder="Lugares onde viajei">
+    <button onclick="cadastrar()">Cadastrar local</button>
+    <br><br>
+    <input type="number" id="numero" placeholder="Viagem n°" min="1">
+    <button onclick="mostrar_local()">Relembrar viagem</button>
+    <br><br>
+    <div id="viagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var viagens = []
+
+    
+    function cadastrar() {
+        
+        var viagem_cadastrada = local.value
+        
+        if (viagem_cadastrada == "") {
+            alert("O campo está em branco")
+        }
+
+        else {
+            viagens.push(local.value)
+            local.value = ""
+        }
+    }
+
+    function mostrar_local() {
+
+        var n_viagem = numero.value
+
+        if (n_viagem >= viagens.length + 1) {
+            alert(`Você não fez uma ${n_viagem}° viagem!`)
+        }
+
+        else {
+            viagem.innerHTML = viagens[n_viagem - 1]
+        }
+    }
+
+
+</script>

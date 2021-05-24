@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreakFilme</title>
+</head>
+<body>
+    <h2>Sorteio Filme</h2>
+    <select id="guerra">
+        <option value="0">Marvel</option>
+        <option value="1">DC</option>
+    </select> <br> <br>
+    <button onclick="ver()">Ver programacao na TV</button>
+    <br>
+    <div id="resu"></div>
+</body>
+</html>
+
+
+<script>
+    function ver() {
+        var filme = guerra.value;
+        for(var sorteio = 0; sorteio < 5 ; sorteio++){
+            var aleatorio = parseInt(Math.random() * 2 )
+            if (aleatorio == filme) {
+                resu.innerHTML = `Voce vera um filme que gosta no ${sorteio+1}o dia`
+                break;
+            }
+        }
+        if (sorteio == 5){ 
+            resu.innerHTML = `Eh, ou le um livro ou assiste um filme que nao gosta mesmo`;
+        }
+    }
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03-Cartas-Vetores-Break</title>
+</head>
+
+<body>
+    <button onclick="ver_sorte()">Ver minha sorte</button>
+    <br>
+    <div id="div_imagens"></div>
+</body>
+
+</html>
+<script>
+    function ver_sorte() {
+        var amor = 0;
+        var jogo = 0;
+        var imagem_amor = `https://static.braziliantimes.com/assets/base/297/c5d/34e/993-621-amor.jpg`;
+        var imagem_jogo = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdKo6YDoi4UV5YcCjKm4TA6UJYvoWLD37JA&usqp=CAU';
+
+        div_imagens.innerHTML = '';
+        for (var sorteios = 0; sorteios < 21; sorteios++) {
+            var sorteado = Math.random(); // entre 0 e 0.99999
+
+            if (sorteado < 0.5) {// amor
+                imagem = imagem_amor;
+                amor++;
+            }
+            else { //jogo
+                imagem = imagem_jogo;
+                jogo++;
+            }
+            /*  --- OPERADOR TERNARIO ---
+            var imagem = sorteado < 0.5 ? imagem_amor : imagem_jogo;
+                sorteado < 0.5 ? amor++ : jogo ++;
+            */
+            div_imagens.innerHTML += `<img src ="${imagem}" style ="height:100px">`;
+            
+            if (amor == 11 || jogo == 11 ){
+            break;
+        }
+        }
+
+
+        // var resultado;
+        // if (amor > jogo){
+        //     resultado = 'Voce tem mais sorte no amor';
+        // }else{
+        //     resultado = 'Voce tem mais sorte no jogo';
+        // }
+        // div_imagens.innerHTML += `<br><br> ${resultado}`;
+        var resultado = (amor > jogo) ? 'Voce tem mais sorte no amor' : 'Voce tem mais sorte no jogo';
+
+        //  OUUUUU 
+        div_imagens.innerHTML += `<br><br> Voce tem mais sorte no ${amor > jogo ? 'amor' : 'jogo'}`;
+    }
+</script>

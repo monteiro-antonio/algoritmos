@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03</title>
+</head>
+<body>
+    <h1>contagem loka</h1>
+    <input placeholder="Menor valor" id="ipt_menor">
+    <input placeholder="Maior valor" id="ipt_maior">
+    <input placeholder="Ritmo valor" id="ipt_ritmo">
+    <button onclick="contagem()">Contagem loka</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function contagem() {
+        var menor = Number(ipt_menor.value);
+        var maior = Number(ipt_maior.value);
+        var ritmo = Number(ipt_ritmo.value);
+
+        for(var contador = 0; menor <= maior; maior = maior - ritmo){
+            contador++
+            msg.innerHTML += `${maior}, ${contador}<br>`
+        }
+        
+    }
+</script>

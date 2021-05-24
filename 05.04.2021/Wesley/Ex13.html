@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <center>
+    <h1>tri e penta usando for</h1>
+    <button onclick="curtir()">Curto 3 e 5</button>
+    <div id="msg"></div>
+</center>
+</body>
+
+</html>
+<script>
+    function curtir() {
+        for (var contador = 0; contador <= 100; contador++) {
+            if (contador % 3 == 0 && contador % 5 == 0) {
+                msg.innerHTML += `Numero: ${contador} TRIPENTA<br>`;
+            } else if (contador % 3 == 0) {
+                msg.innerHTML += `Numero: ${contador} TRI<br>`;
+            } else if (contador % 5 == 0) {
+                msg.innerHTML += `Numero: ${contador} PENTA<br>`;
+            } else {
+                msg.innerHTML += `Numero: ${contador}<br>`;
+            }
+        }
+
+    }
+</script>

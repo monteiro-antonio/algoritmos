@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino 02</title>
+</head>
+<body>
+    <h3>Temperaturas em Sao Paulo</h3>
+    <button onclick="ver()">Ver Temperatura</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function ver() {
+        for (var temp = -7 ; temp <= 39; temp++){
+            msg.innerHTML += `${temp} <br>`
+        }
+            
+    }
+</script>

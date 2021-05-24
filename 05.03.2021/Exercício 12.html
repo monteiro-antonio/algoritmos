@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+
+<body>
+    <input type="number" id="qtde" placeholder="Insira a quantidade de elefantes">
+    <br><br>
+    <button onclick="calcular()">Atazanar a médium</button>
+    <br><br>
+    <div id="text"></div>
+
+</body>
+
+<script>
+
+
+    function calcular() {
+
+        var elefante = qtde.value;
+        var contador = 1;
+        var palavra = "incomodam,"
+
+        text.innerHTML = ''
+
+        while (contador < elefante) {
+            contador++;
+            palavra += " incomodam,"
+
+            text.innerHTML += `
+            1 elefante incomoda muita gente!<br>
+            ${contador} elefantes, ${palavra} muito mais!<br><br>
+            `;
+        }
+    }
+</script>
+
+</html>

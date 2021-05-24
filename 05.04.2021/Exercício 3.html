@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <input type="number" id="menor" placeholder="Menor valor">
+    <br><br>
+    <input type="number" id="maior" placeholder="Maior valor">
+    <br><br>
+    <input type="number" id="ritmo" placeholder="Ritmo de crescimento">
+    <br><br>
+    <button onclick="numeros()">Contagem loka</button>
+    <br><br>
+    <div id="text"></div>
+</body>
+
+<script>
+
+    function numeros() {
+
+        var menor_valor = Number(menor.value)
+        var maior_valor = Number(maior.value)
+        var ritmo_crescimento = Number(ritmo.value)
+        
+        text.innerHTML = ''
+
+        for (var contador = maior_valor; contador >= menor_valor; contador-= ritmo_crescimento) {
+
+                text.innerHTML += `${contador}<br>`;
+        }
+    }
+</script>
+
+</html>

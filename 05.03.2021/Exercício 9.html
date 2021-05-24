@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+
+<body>
+    <button onclick="time()">Amo o escudo do meu time!</button>
+    <br><br>
+    <div id="text"></div>
+
+</body>
+
+<script>
+
+
+    function time() {
+        var contador = 0;
+
+        text.innerHTML = ''
+
+        while (contador < 7) {
+            contador++;
+            text.innerHTML += `<img src="https://a3.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F874.png">`;
+        }
+    }
+</script>
+
+</html>

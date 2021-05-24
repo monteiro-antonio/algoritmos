@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 - Vetor</title>
+</head>
+
+<body>
+    <input type="number" id="nota" placeholder="Insira a nota" min="0" max="10"> 
+    <br><br>
+    <input type="number" id="analisar" placeholder="Analisar a partir de:" min="0" max="10">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar nota</button>
+    <button onclick="verificar()">Ver histórico</button>
+    <br><br>
+    <div id="lista"></div>
+    <div id="calculos"></div>
+</body>
+
+</html>
+
+<script>
+    var notas = []
+
+    function cadastrar() {
+
+        var n = nota.value
+
+        if (n == "") {
+            alert("Digite uma nota")
+        }
+
+        else {
+            notas.push(nota.value)
+            nota.value = ""
+        }
+    }
+
+    function verificar() {
+
+        var soma = 0
+        var media = 0
+        var contagem = 0
+
+        var nota_analisada = analisar.value
+
+        for (let i = 0; i < notas.length; i++) {
+
+            soma += Number(notas[i])
+            media = soma / notas.length
+
+            if (notas[i] >= nota_analisada) {
+                lista.innerHTML += `${notas[i]} <br> `
+                contagem++
+            }
+
+            calculos.innerHTML = `
+            Foram cadastradas ${contagem} notas maiores que ${nota_analisada} e a média dessas notas é de ${media}`
+        }
+
+    }
+
+</script>

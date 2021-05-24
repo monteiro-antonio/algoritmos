@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+
+<body>
+    <input type="number" id="numero" placeholder="Exibir fatorial">
+    <br><br>
+    <button onclick="numeros()">Contagem loka</button>
+    <br><br>
+    <div id="text"></div>
+</body>
+
+<script>
+
+    function numeros() {
+
+        var numeros = numero.value;
+
+        var resultado = 1;
+
+        for (var count = 1; count <= numeros; count++)
+
+        resultado *= count;
+
+        text.innerHTML = `${numeros} x ${numeros - 1} = ${resultado}`
+
+    }
+</script>
+
+</html>
