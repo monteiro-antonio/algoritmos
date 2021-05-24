@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <input type="text" id="height" placeholder="Insira a sua altura">
+    <br><br>
+    <button id="botao" onclick="validar()">Analisar para esportes</button>
+    <br><br>
+    <div id="texto"></div>
+</body>
+<script>
+    function validar() {
+
+        var valid_height = height.value
+
+        if (valid_height < 1.6) {
+            texto.innerHTML = `
+            Pode tntar ser piloto(a) de corrida<br>
+            Pode tentar ser velejador(a)
+            `
+        }
+
+        else if (valid_height >= 1.6 && valid_height < 1.85) {
+            texto.innerHTML = `Pode tentar ser jogador de futebol ou handebol`
+        }
+
+        else {
+            texto.innerHTML = `
+            Pode tentar ser jogador de voleibol<br>
+            Pode tentar ser jogador de basquete<br>
+            `
+        }
+    }
+</script>
+
+</html>
